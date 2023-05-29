@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tela de Configurações do Roteador</title>
+    <style>
+        /* Estilos para a página */
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        h1 {
+            color: #4c72a4;
+        }
+        
+        .config-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .config-menu a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px 10px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s;
+        }
+        
+        .config-menu a.active {
+            border-bottom-color: #333;
+        }
+        
+        .config-section {
+            display: none;
+            margin-bottom: 30px;
+        }
+        
+        .config-section.active {
+            display: block;
+        }
+        
+        .config-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .config-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .config-form input[type="text"],
+        .config-form input[type="password"],
+        .config-form select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .config-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tela de Configurações do Roteador</h1>
+
+    <div class="config-menu">
+        <a href="#" onclick="showConfigSection(event, 'configurar-ip')">Configurar IP</a>
+        <a href="#" onclick="showConfigSection(event, 'configurar-rotas')">Configurar Rotas</a>
+        <a href="#" onclick="showConfigSection(event, 'configurar-nat-saida')">Configurar NAT de Saída</a>
+        <a href="#" onclick="showConfigSection(event, 'configurar-nat-entrada')">Configurar NAT de Entrada</a>
+    </div>
+    <div id="configurar-ip" class="config-section">
+        <h2>Configurar IP</h2>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Botão dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">PPPOE</a>
+                <a class="dropdown-item" href="#">DHCP</a>
+                <a class="dropdown-item" href="#">IP estático</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="configurar-rotas" class="config-section">
+        <h2>Configurar Rotas</h2>
+        <!-- Conteúdo do formulário para configurar as rotas -->
+    </div>
+
+    <div id="configurar-nat-saida" class="config-section">
+        <h2>Configurar NAT de Saída</h2>
+        <!-- Conteúdo do formulário para configurar o NAT de saída -->
+    </div>
+
+    <div id="configurar-nat-entrada" class="config-section">
+        <h2>Configurar NAT de Entrada</h2>
+        <!-- Conteúdo do formulário para configurar o NAT de entrada -->
+    </div>
+
+    <script>
+        function showConfigSection(event, sectionId) {
+            event.preventDefault();
+            const configSections = document.querySelectorAll('.config-section');
+            const configLinks = document.querySelectorAll('.config-menu a');
+            configSections.forEach(section => section.classList.remove('active'));
+            configLinks.forEach(link => link.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
