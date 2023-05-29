@@ -1,0 +1,18 @@
+Instalaçao Apache:
+1. sudo su
+2. apt install apache2
+3. cd /var/www/html
+4. Edite o index.html para ver o que acontece com o acesso ao see serviço web
+5. Com o navegador de sua máquina local, digite o IP dela na barra de endereços
+
+Configurar Apache pra CGI:
+1. echo "LoadModule cgi_module /usr/lib/apache2/modules/mod_cgi.so" > /etc/apache2/mods-available/cgi.load
+2. echo "LoadModule cgi_module /usr/lib/apache2/modules/mod_cgi.so" > /etc/apache2/mods-enabled/cgi.load
+3. pico /etc/apache2/mods-enabled/mime.conf
+altere a linha AddHandler cgi-script .cgi para AddHandler cgi-script .cgi .sh
+4. cat /etc/apache2/sites-available/000-default.conf > a
+5. echo "ScriptAlias /sh/ /usr/lib/cgi-bin/" > /etc/apache2/sites-available/000-default.conf
+6. cat a >> /etc/apache2/sites-available/000-default.conf
+7. /etc/init.d/apache2 restart
+8. Insira o arquivo anexo na pasta /usr/lib/cgi-bin
+Acesse: <seu_ip>/cgi-bin/teste.cgi
