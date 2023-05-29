@@ -12,3 +12,7 @@ CGI para ver usuarios logados:
   	echo "</pre>"
   
   echo "$(cat cgi_footer.html)"
+  
+  Implantaçao no HTML:
+  
+  <a href="http://localhost/cgi-bin/usuariosLogados.cgi" target="_blank"><button type="button">Usuarios Logados</button></a>
