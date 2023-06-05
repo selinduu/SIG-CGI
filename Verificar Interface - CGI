@@ -1,0 +1,12 @@
+#!/bin/bash
+  echo "content-type: text/html"
+  echo
+  echo
+  echo "$(cat cgi_header.html)"
+  
+  	echo "<br>"
+  	echo "<pre>"
+  	ip a | grep enp3s0f0 | grep UP | cut -d " " -f9
+  	echo "</pre>"
+  
+  echo "$(cat cgi_footer.html)"
