@@ -16,6 +16,15 @@
         h1 {
             color: #4c72a4;
         }
+        h2{
+            color:#fff;
+        }
+        h3{
+            color: #fff;
+        }
+        h5{
+            color: #fff;
+        }
         
         .config-menu {
             display: flex;
@@ -71,6 +80,173 @@
             padding: 10px 20px;
             cursor: pointer;
         }
+        
+        .Card{
+            background: #191919;
+            height: 400px;
+            width: 400px;
+            border-radius: 20px;
+            margin: 15px;
+            position: static;
+            text-align: center; 
+            -webkit-perspective: 250px;
+            -moz-perspective: 250px;
+            display: inline-block;
+            
+        }
+        
+        .Card img{
+            width: 70%;
+            height: 70%;
+        }
+        
+        .CaixaM{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding-right: 80%;
+        }
+        
+        .CardMn {
+            background: #191919;
+            height: 400px;
+            width: 40px;
+            border-radius: 20px;
+            margin: 15px;
+            position: static;
+            text-align: center; 
+            
+        }
+        .CardMnn {
+            background: #191919;
+            height: 200px;
+            width: 200px;
+            border-radius: 20px;
+            margin: 15px;
+            position: static;
+            text-align: center; 
+        }
+        button{
+            background-color: #10c6df;
+            color: #0f0f0f;
+            text-transform: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 20px;
+            border-radius: 30px;
+            transition: .4s;
+            
+        }
+        button:hover{
+            background-color: transparent;
+            border: 2px solid #10c6df;
+            cursor: pointer;
+        }
+        .neon-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 64px;
+            color: #14fff1;
+            border: 4px solid #14fff1;
+            padding: 16px 64px;
+            border-radius: 16px;
+          
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #14fff1;
+          
+            box-shadow: inset 0 0 32px #14fff1, 0 0 15px #14fff1;
+          
+            position: relative;
+          }
+          
+          .neon-btn::before {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #14fff1;
+            left: 0;
+            top: 120%;
+          
+            transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+            filter: blur(64px);
+            opacity: 0.7;
+          }
+          
+          .neon-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+          
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 100ms linear;
+          }
+          
+          .neon-btn:hover::after,
+          .neon-btn:focus::after {
+            opacity: 1;
+          }
+          
+          .neon-btn:hover::before,
+          .neon-btn:focus::before {
+            opacity: 1;
+          }
+          
+          .neon-btn:hover,
+          .neon-btn:focus {
+            color: #202631;
+            text-shadow: none;
+          }
+          .Caixa{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            flex-wrap: nowrap;
+            padding-right: 18%;
+        }
+        .dp-menu ul{
+            list-style-type: nome;
+            padding: 0;
+            position: relative;
+        }
+        
+        
+        .dp-menu ul li{
+           display: inline;
+           position: relative;
+        }
+          
+        .dp-menu ul li a{
+            padding: 2px;
+            display: inline-block;
+         }
+        
+         .dp-menu ul ul{
+            display: none;
+            position: absolute;
+         }
+        
+         .dp-menu ul li:hover ul{
+            display: block;
+         }
+        
+         .dp-menu ul ul {
+            position: relative;
+            
+        
+         }
+         
+         .dp-menu ul ul li a{
+            display: block;
+            
+         }
     </style>
 </head>
 
@@ -84,24 +260,39 @@
         <a href="#" onclick="showConfigSection(event, 'configurar-nat-entrada')">Configurar NAT de Entrada</a>
     </div>
     <div id="configurar-ip" class="config-section">
-        <h2>Configurar IP</h2>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Botão dropdown
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">PPPOE</a>
-                <a class="dropdown-item" href="#">DHCP</a>
-                <a class="dropdown-item" href="#">IP estático</a>
-            </div>
+    <div class="caixa">
+        <div class="Card">
+            <h2>Configurar IP</h2><br>
+            <form class="forms">
+                <h3>IP</h3>
+                <input type="number" placeholder="0.0.0.0" required><br><br><br>
+                <input type="number" placeholder="0.0.0.0" required><br><br><br>
+                <input type="number" placeholder="0.0.0.0" required><br><br><br>
+                <input type="number" placeholder="0.0.0.0" required><br><br><br>
+                 <a href="#"><button type="button">Enviar</button></a>
+            </form>
         </div>
     </div>
-
+</div>
+<div class="dp-menu"> <!--Onde ficam os botões-->
+    <div class="caixa">
     <div id="configurar-rotas" class="config-section">
         <h2>Configurar Rotas</h2>
-        <!-- Conteúdo do formulário para configurar as rotas -->
+        <div class="Card">
+            <div class="dp-card">
+                <ul><a><h5>Configurações</h5></a>
+                    <li><a href="http://localhost/cgi-bin/appInstalados.cgi" class="neon-btn" target="_blank"><button type="button">Apps Instalados</button></a>
+                        <ul>
+                            <li><a href="http://localhost/cgi-bin/usuariosLogados.cgi" target="_blank"><button type="button">Usuarios Logados</button></a></li>
+                            <li><a href="http://localhost/cgi-bin/usuariosLogados.cgi" target="_blank"><button type="button">Usuarios Logados</button></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!--final do codigo dos botôes-->
     </div>
-
+</div>
+</div>
     <div id="configurar-nat-saida" class="config-section">
         <h2>Configurar NAT de Saída</h2>
         <!-- Conteúdo do formulário para configurar o NAT de saída -->
