@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            background-color: #fff;
+            background-color: #3b3b3b;
         }
         
         h1 {
@@ -36,7 +36,7 @@
             display: inline-block;
             margin-right: 10px;
             padding: 5px 10px;
-            color: #333;
+            color: #fff;
             text-decoration: none;
             border-bottom: 2px solid transparent;
             transition: border-bottom-color 0.3s;
@@ -129,7 +129,7 @@
         }
         button{
             background-color: #10c6df;
-            color: #0f0f0f;
+            color: #fff;
             text-transform: none;
             border: 2px solid transparent;
             font-weight: bold;
@@ -252,7 +252,7 @@
 
 <body>
     <h1>Tela de Configurações do Roteador</h1>
-
+    
     <div class="config-menu">
         <a href="#" onclick="showConfigSection(event, 'configurar-ip')">Configurar IP</a>
         <a href="#" onclick="showConfigSection(event, 'configurar-rotas')">Configurar Rotas</a>
@@ -265,10 +265,10 @@
             <h2>Configurar IP</h2><br>
             <form class="forms">
                 <h3>IP</h3>
-                <input type="number" placeholder="0.0.0.0" required><br><br><br>
-                <input type="number" placeholder="0.0.0.0" required><br><br><br>
-                <input type="number" placeholder="0.0.0.0" required><br><br><br>
-                <input type="number" placeholder="0.0.0.0" required><br><br><br>
+                <input type="number" placeholder="ipv4" required><br><br><br>
+                <input type="number" placeholder="ipv4" required><br><br><br>
+                <input type="number" placeholder="ipv4" required><br><br><br>
+                <input type="number" placeholder="ipv4" required><br><br><br>
                  <a href="#"><button type="button">Enviar</button></a>
             </form>
         </div>
@@ -277,14 +277,15 @@
 <div class="dp-menu"> <!--Onde ficam os botões-->
     <div class="caixa">
     <div id="configurar-rotas" class="config-section">
-        <h2>Configurar Rotas</h2>
+       
         <div class="Card">
             <div class="dp-card">
-                <ul><a><h5>Configurações</h5></a>
+                <ul><a><h2>Configurar Rotas</h2></a>
                     <li><a href="http://localhost/cgi-bin/appInstalados.cgi" class="neon-btn" target="_blank"><button type="button">Apps Instalados</button></a>
                         <ul>
                             <li><a href="http://localhost/cgi-bin/usuariosLogados.cgi" target="_blank"><button type="button">Usuarios Logados</button></a></li>
                             <li><a href="http://localhost/cgi-bin/usuariosLogados.cgi" target="_blank"><button type="button">Usuarios Logados</button></a></li>
+                            <li><a href="http://localhost/cgi-bin/interface.cgi" target="_blank"><button type="button">testar maquinas</button></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -295,12 +296,36 @@
 </div>
     <div id="configurar-nat-saida" class="config-section">
         <h2>Configurar NAT de Saída</h2>
-        <!-- Conteúdo do formulário para configurar o NAT de saída -->
+        <div class="caixa">
+            <div class="Card">
+                <h2>Configurar IP</h2><br>
+                <form class="forms">
+                    <h3>IP</h3>
+                    <input type="text" placeholder="ipv4" required><br><br><br>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                     <a href="#"><button type="button">Enviar</button></a>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div id="configurar-nat-entrada" class="config-section">
         <h2>Configurar NAT de Entrada</h2>
-        <!-- Conteúdo do formulário para configurar o NAT de entrada -->
+        <div class="caixa">
+            <div class="Card">
+                <h2>Configurar IP</h2><br>
+                <form class="forms">
+                    <h3>IP</h3>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                    <input type="number" placeholder="ipv4" required><br><br><br>
+                     <a href="#"><button type="button">Enviar</button></a>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
